@@ -1,0 +1,45 @@
+### Home  
+GET http://localhost:3000/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NjM1Nzg3OTEsImV4cCI6MTY2MzY2NTE5MSwiYXVkIjoiNjMyNmU4NDNkYjk4NjcxMTY1ZTg1MzNjIiwiaXNzIjoicGF2aWt1bWJoYXIuY29tIn0.8sWRy6N4A5BdBhe_jF38GfmaYJvMAL6_mGFYPT7sqmU
+
+
+### Register  
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+    "email":"pge1qd1o@d.com",
+    "password":"pass"
+}
+
+
+
+### Login Route
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "email":"pge1qd1o@d.com",
+    "password":"pass"
+}
+
+
+### Refresh token Route
+POST http://localhost:3000/auth/refresh-token
+Content-Type: application/json
+
+{
+    "refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NjM1Nzc5MDcsImV4cCI6MTY2MzY2NDMwNywiYXVkIjoiNjMyNmU4NDNkYjk4NjcxMTY1ZTg1MzNjIiwiaXNzIjoicGF2aWt1bWJoYXIuY29tIn0.mcxY_dFzU7UEo7ZAoLqap6g_viy0y_2K_ygGUkLzwH0"
+
+}
+
+
+
+### Refresh token Route
+DELETE  http://localhost:3000/auth/logout
+Content-Type: application/json
+
+{
+    "refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NjM1NzgzMDYsImV4cCI6MTY2MzY2NDcwNiwiYXVkIjoiNjMyNmU4NDNkYjk4NjcxMTY1ZTg1MzNjIiwiaXNzIjoicGF2aWt1bWJoYXIuY29tIn0.ZcJEZ5_jrIf8HfdeCmfoWb_wU6165b1kD6WWAVSC5Q0"
+
+}

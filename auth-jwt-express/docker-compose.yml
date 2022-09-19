@@ -1,0 +1,50 @@
+version: '3.9'
+services: 
+#mongo service
+  mongo_db:
+    container_name: mongo_db_container
+    image: mongo:latest
+    restart: always
+    volumes:
+      - mongo_db:/data/db
+
+  redis-server:
+    container_name: myapp-redis-server
+    image: redis:latest
+    restart: always
+    ports:
+      - '6379:6379'
+    
+  
+
+
+
+#node js api servicce
+  node_auth_api:
+    container_name: node_auth_api_container
+    build: .
+    ports:
+      - 3000:3000
+    environment:
+      PORT: 3000
+      MONGODB_URI: mongodb://mongo_db:27017
+      DB_NAME: auth_tutorial
+      ACCESS_TOKEN_SECRET: 9d53eefb61a986aa6666b14a39a0f2e74e953efa4b47dde5b0144dd25d1b6eb5
+      REFRESH_TOKEN_SECRET: 26d6780536a5157feadf653d1657171e096d61ad048c20c0f97bcd2c709deea4
+      REDIS_PORT: 6379
+      REDIS_HOST: redis-server
+      REDIS_URL:  redis://redis-server:6379
+    depends_on: 
+      - mongo_db
+      - redis-server
+    
+    links:
+      - "mongo_db"
+      - "redis-server"
+      
+
+
+volumes:
+  mongo_db: {}
+
+

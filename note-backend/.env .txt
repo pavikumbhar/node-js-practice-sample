@@ -1,0 +1,4 @@
+MONGODB_URI=mongodb://localhost:27017
+DB_NAME=note-db
+
+JWT_SECRET=9d53eefb61a986aa6666b14a39a0f2e74e953efa4b47dde5b0144dd25d1b6eb5

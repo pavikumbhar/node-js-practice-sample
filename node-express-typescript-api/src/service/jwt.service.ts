@@ -94,8 +94,7 @@ class JwtService{
                         console.log('saved token and provided token are not same');
                         return reject('saved token and provided token are not same');
                     }
-                    resolve(userId);
-                    return;
+                    return resolve(userId);
                 }).catch((err:any)=>{
                         console.log(err.message);
                         return reject(err.message);
